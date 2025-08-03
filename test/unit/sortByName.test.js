@@ -32,4 +32,10 @@ describe("Books names test suite", () => {
   test('should handle array with identical elements', () => {
     expect(sorting.sortByName(["тест", "тест", "тест"])).toEqual(["тест", "тест", "тест"]);
   });
+
+  test('сортирует массив с разными регистрами и одинаковыми элементами', () => {
+    const input = ["Бэтмен", "амазонка", "Анабель", "бэтмен", "Амазонка"];
+    const expected = ["Амазонка", "амазонка","Анабель", "Бэтмен", "бэтмен"];
+    expect(sorting.sortByName([...input])).toEqual(expected);
+  });
 });
